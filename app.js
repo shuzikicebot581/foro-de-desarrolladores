@@ -14,7 +14,10 @@ app.use(bodyParser.json());
 // This connection string connects to the local MongoDB instance on the 'foro' database.
 mongoose.connect('mongodb://localhost:27017/foro', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Base de datos conectada'))
-  .catch(err => console.error(err));
+  .catch(err => {
+    console.error('No se pudo conectar a la base de datos:', err);
+    process.exit(1); // Exit the process if the connection fails
+  });
 
 // Define routes
 app.get('/', (req, res) => {
