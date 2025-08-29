@@ -10,6 +10,14 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
+// Error handling for JSON parsing errors
+app.use((err, req, res, next) => {
+  if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
+    return res.status(400).send({ message: 'Petición JSON mal formada' });
+  }
+  next();
+});
+
 // Connecting to MongoDB
 // This connection string connects to the local MongoDB instance on the 'foro' database.
 mongoose.connect('mongodb://localhost:27017/foro', { useNewUrlParser: true, useUnifiedTopology: true })
