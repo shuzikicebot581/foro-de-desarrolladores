@@ -11,6 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connecting to MongoDB
+// This connection string connects to the local MongoDB instance on the 'foro' database.
 mongoose.connect('mongodb://localhost:27017/foro', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Base de datos conectada'))
   .catch(err => console.error(err));
