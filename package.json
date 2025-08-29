@@ -1,0 +1,18 @@
+{
+  "name": "foro-de-desarrolladores",
+  "version": "1.0.0",
+  "description": "Una plataforma simple para la creación de foros dedicados a distintas temáticas de desarrollo de software, enfocada en la comunidad hispanohablante.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {},
+  "author": "Tu Nombre",
+  "license": "MIT"
+}
