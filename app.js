@@ -21,6 +21,12 @@ app.get('/', (req, res) => {
   res.send('Bienvenido al Foro de Desarrolladores');
 });
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Ha ocurrido un error en el servidor.');
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
