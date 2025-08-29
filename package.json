@@ -12,7 +12,9 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.32.0"  
+  },
   "author": "Tu Nombre",
   "license": "MIT"
 }
